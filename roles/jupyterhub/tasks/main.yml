@@ -1,0 +1,45 @@
+---
+  - name: make sure config directory exists
+    file: dest=/etc/jupyterhub state=directory
+
+  - name: make sure secure directory exists
+    file: dest=/srv/jupyterhub state=directory
+
+  - name: make sure runtime directory exists
+    file: dest=/var/run/jupyterhub state=directory
+
+  - name: touch log file
+    file: dest=/var/log/jupyterhub.log state=touch
+
+  - name: copy ssl certificate
+    copy: src=ssl.crt dest={{ hub_ssl_cert_path }} mode=644
+
+  - name: copy ssl certificate key
+    copy: src=ssl.key dest={{ hub_ssl_protected_key_path }} mode=640
+
+  - name: strip ssl key
+    command: >
+      openssl rsa -in {{ hub_ssl_protected_key_path }}
+      -out {{ hub_ssl_key_path }}
+      -passin pass:{{ key_password }}
+      creates={{ hub_ssl_key_path }}
+
+  - name: make sure cookie_secret file is present
+    file: dest={{ hub_runtime_dir }}/cookie_secret state=touch mode=0644
+    notify:
+      - start jupyterhub
+
+  - name: make sure hub sqlite is present
+    file: dest={{ hub_runtime_dir }}/jupyterhub.sqlite state=touch mode=0644
+    notify:
+      - start jupyterhub
+
+  - name: create upstart config
+    template: src=jupyterhub.conf.j2 dest=/etc/init/jupyterhub.conf
+    notify:
+      - start jupyterhub
+
+  - name: create config file
+    template: src=jupyterhub_config.py.j2 dest={{ hub_config_dir }}/jupyterhub_config.py
+    notify:
+      - start jupyterhub

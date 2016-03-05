@@ -1,0 +1,10 @@
+---
+  - name: set up a jupyterhub
+    hosts: stage
+    user: root
+    tasks:
+      - name: backup user directories
+        synchronize: >
+          mode=pull
+          src=/home
+          dest=user_data/

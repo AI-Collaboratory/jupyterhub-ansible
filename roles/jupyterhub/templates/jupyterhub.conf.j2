@@ -1,0 +1,19 @@
+# jupyterhub - JupyterHub Service
+#
+# A web-based, collaborative coding environment.
+
+description "JupyterHub"
+author "Ed Summers <ehs@pobox.com>"
+
+start on runlevel [2345]
+stop on runlevel [!2345]
+
+respawn
+
+env PATH=/opt/anaconda/envs/{{ conda_env_name }}/bin:{{ ansible_env.PATH }}
+env CONFIGPROXY_AUTH_TOKEN={{ hub_configproxy_token }}
+env GITHUB_CLIENT_ID={{ github_client_id }}
+env GITHUB_CLIENT_SECRET={{ github_client_secret }}
+env OAUTH_CALLBACK_URL={{ github_oauth_callback_url }}
+
+exec jupyterhub --debug --config {{ hub_config_dir }}/jupyterhub_config.py

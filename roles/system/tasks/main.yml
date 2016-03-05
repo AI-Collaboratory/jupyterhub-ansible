@@ -1,0 +1,23 @@
+---
+
+  - name: update system
+    apt: update_cache=yes upgrade=full
+
+  - name: install apt packages
+    apt: pkg={{ item }} update_cache=yes cache_valid_time=3600
+    with_items:
+      - npm
+      - nodejs-legacy
+      - git
+
+  - name: install npm packages
+    npm: name=configurable-http-proxy global=yes
+
+  - name: download jq
+    get_url: >
+      url=http://stedolan.github.io/jq/download/linux64/jq
+      dest=/usr/local/bin/jq
+      sha256sum="{{ jq_sha256sum }}"
+
+  - name: make jq executable
+    file: dest=/usr/local/bin/jq state=touch mode=755

@@ -1,0 +1,8 @@
+---
+  # Based on @edsu's script at:
+  # https://github.com/umd-mith/aeri2015-twitter-workshop/blob/master/sync.py
+  - name: set up jupyterhub user directories
+    hosts: stage
+    user: root
+    roles:
+      - exercises
