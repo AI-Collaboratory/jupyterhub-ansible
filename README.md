@@ -10,11 +10,10 @@ First get this repository if you haven't already:
     git clone https://github.com/umd-dcic/jupyterhub-ansible.git
     cd jupyterhub
 
-Next edit `hosts` to point at your server.
-
-We run JupyterHub under SSL. If you have a certificate (ssl.crt)
-and private key already (ssl.key) you can place them in this directory. 
-Otherwise you can generate a self signed certificate by:
+Edit `hosts` to point at your server.  We run JupyterHub under SSL. If you 
+have a certificate (ssl.crt) and private key already (ssl.key) you can 
+place them in this directory.  Otherwise you can generate a self 
+signed certificate by:
 
     openssl req -x509 -newkey rsa:2048 -keyout ssl.key -out ssl.crt -days XXX
 
