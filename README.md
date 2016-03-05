@@ -12,7 +12,7 @@ First get this repository if you haven't already:
 
 Next edit `hosts` to point at your server.
 
-This sets up JupyterHub running under SSL. If you have a certificate (ssl.crt)
+We run JupyterHub under SSL. If you have a certificate (ssl.crt)
 and private key already (ssl.key) you can place them in this directory. 
 Otherwise you can generate a self signed certificate by:
 
