@@ -23,7 +23,7 @@ to `group_vars/all/secret.yml`. A template is included for you in
 
     cp group_vars/all/secret.template group_vars/all/secret.yml
 
-Fill in the missing variables in `group_vars/all/secret.yml`. See [Jupyterhub Getting Started](https://jupyterhub.readthedocs.org/en/latest/getting-started.html) for more details.
+Fill in the missing variables in `group_vars/all/secret.yml`. See [Jupyterhub Getting Started](https://jupyterhub.readthedocs.org/en/latest/getting-started.html) and the [oauthenicator documentation](https://github.com/jupyter/oauthenticator) for more details.
 
 ## Run
 
