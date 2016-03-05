@@ -9,13 +9,9 @@ First get this repository if you haven't already:
     git clone https://github.com/umd-dcic/jupyterhub-ansible.git
     cd jupyterhub
 
-Next edit `hosts` to point at your server, and edit `hub_ip` in 
-`group_vars/all/config.yml` to match the server you added to `hosts`.
-Note: this is the IP address that JupyterHub will bind to, so be sure
-it is the ip address on the interface you want to bind to, which may not 
-be the public IP you see when you resolve the host name.
+Next edit `hosts` to point at your server.
 
-It's best to run JupyterHub under SSL. If you have a certificate (ssl.crt)
+This sets up JupyterHub running under SSL. If you have a certificate (ssl.crt)
 and private key already (ssl.key) you can place them in this directory. 
 Otherwise you can generate a self signed certificate by:
 
@@ -27,7 +23,7 @@ to `group_vars/all/secret.yml`. A template is included for you in
 
     cp group_vars/all/secret.template group_vars/all/secret.yml
 
-and then add the missing variables into `group_vars/all/secret.yml`. See [Jupyterhub Getting Started](https://jupyterhub.readthedocs.org/en/latest/getting-started.html) for more details.
+Fill in the missing variables in `group_vars/all/secret.yml`. See [Jupyterhub Getting Started](https://jupyterhub.readthedocs.org/en/latest/getting-started.html) for more details.
 
 ## Run
 

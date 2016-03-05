@@ -1,3 +1,2 @@
 [stage]
-ec2-54-210-162-136.compute-1.amazonaws.com ansible_connection=ssh ansible_user=ubuntu
-
+ec2-54-84-204-21.compute-1.amazonaws.com ansible_connection=ssh ansible_user=edsu
