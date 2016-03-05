@@ -3,7 +3,7 @@
 These ansible playbooks are used to setup, configure and manage DCIC's
 JupyterHub.
 
-## Setup and Configure
+## Setup
 
 First get this repository if you haven't already:
 
