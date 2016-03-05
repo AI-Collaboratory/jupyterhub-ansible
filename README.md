@@ -1,6 +1,7 @@
-# jupyterhub
+# jupyterhub-ansible
 
-set up a jupyterhub on a remote server
+These ansible playbooks are used to setup, configure and manage DCIC's
+JupyterHub.
 
 ## Setup and Configure
 
