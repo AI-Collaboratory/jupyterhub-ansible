@@ -1,7 +1,7 @@
 # jupyterhub-ansible
 
-These ansible playbooks are used to setup, configure and manage DCIC's
-JupyterHub.
+These ansible plays are used to setup, configure and manage DCIC's JupyterHub.
+They are a work in progress.
 
 ## Setup
 
