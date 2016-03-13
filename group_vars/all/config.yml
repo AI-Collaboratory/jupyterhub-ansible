@@ -5,7 +5,6 @@
   hub_ssl_cert_path: /srv/jupyterhub/ca-bundle.cert
   hub_ssl_protected_key_path: /srv/jupyterhub/ssl.protected.key
   hub_ssl_key_path: /srv/jupyterhub/ssl.key
-  key_password: "{{ssl_passphrase}}"
   hub_ip: "{{ansible_eth0.ipv4.address}}"
   hub_port: 8080
   hub_config_dir: /etc/jupyterhub

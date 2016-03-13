@@ -36,3 +36,10 @@ Obviously you'll need to [install Ansible](http://docs.ansible.com/ansible/intro
 You don't need the `sync.yml` playbook or the exercises role to run a 
 jupyterhub server. These are for copying sample data and notebooks to 
 user directories.
+
+## Develop
+
+If you want to workon this playbook you can use the supplied ansible setup.
+
+    vagrant up
+

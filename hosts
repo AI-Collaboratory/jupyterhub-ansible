@@ -1,2 +1,5 @@
 [stage]
 ec2-54-84-204-21.compute-1.amazonaws.com ansible_connection=ssh ansible_user=edsu
+
+[develop]
+192.168.33.15
