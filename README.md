@@ -39,7 +39,7 @@ user directories.
 
 ## Develop
 
-If you want to workon this playbook you can use the supplied ansible setup.
+If you want to workon this playbook you can use the supplied Vagrant setup.
 
     vagrant up
 
