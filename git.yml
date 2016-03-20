@@ -1,0 +1,8 @@
+---
+  - name: checkout git repos to workspaces
+    hosts: stage
+    become: true
+    become_user: root
+    become_method: sudo
+    roles:
+      - git

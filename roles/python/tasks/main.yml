@@ -38,6 +38,7 @@
       - seaborn
       - pandas
       - csvkit
+      - gensim
     environment:
       PATH: /opt/anaconda/envs/{{ conda_env_name }}/bin:{{ ansible_env.PATH }}
 

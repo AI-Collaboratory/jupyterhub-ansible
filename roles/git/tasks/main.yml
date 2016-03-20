@@ -1,0 +1,13 @@
+---
+  - name: retrieve list of home directories
+    command: ls /home
+    register: home_dirs
+
+  - name: sync git repos to home directories
+    git: >
+      repo=https://github.com/edsu/cscw2016-topicmodeling.git
+      dest=/home/{{ item }}/cscw2016-topicmodeling
+      force=yes
+    with_items: home_dirs.stdout_lines
+    become: yes
+    become_user: '{{ item }}'
