@@ -68,8 +68,12 @@ import os
 #   where `handler` is the calling web.RequestHandler,
 #   and `data` is the POST form data from the login page.
 # c.JupyterHub.authenticator_class = 'jupyterhub.auth.PAMAuthenticator'
-c.JupyterHub.authenticator_class = 'oauthenticator.LocalGitHubOAuthenticator'
-c.GitHubOAuthenticator.oauth_callback_url = os.environ['OAUTH_CALLBACK_URL']
+c.JupyterHub.authenticator_class = 'ldapauthenticator.LDAPAuthenticator'
+c.LDAPAuthenticator.server_address = 'ldap.umd.edu'
+c.LDAPAuthenticator.bind_dn_template = 'uid={username},ou=people,dc=umd,dc=edu'
+
+#c.JupyterHub.authenticator_class = 'oauthenticator.LocalGitHubOAuthenticator'
+#c.GitHubOAuthenticator.oauth_callback_url = os.environ['OAUTH_CALLBACK_URL']
 
 
 # The base URL of the entire application
@@ -191,7 +195,7 @@ c.JupyterHub.port = 443
 # The class to use for spawning single-user servers.
 # 
 # Should be a subclass of Spawner.
-# c.JupyterHub.spawner_class = 'jupyterhub.spawner.LocalProcessSpawner'
+c.JupyterHub.spawner_class = 'dockerspawner.DockerSpawner'
 
 # Path to SSL certificate file for the public facing interface of the proxy
 # 

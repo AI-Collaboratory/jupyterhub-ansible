@@ -7,4 +7,5 @@
     roles:
       - system
       - python
+      - docker
       - jupyterhub

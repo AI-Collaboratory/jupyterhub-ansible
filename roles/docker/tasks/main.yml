@@ -1,0 +1,18 @@
+---
+- name: install key
+  apt_key: keyserver=hkp://p80.pool.sks-keyservers.net:80 id=58118E89F3A912897C070ADBF76221572C52609D
+
+- name: add apt repo
+  apt_repository: repo='deb https://apt.dockerproject.org/repo ubuntu-trusty main' state=present
+
+- name: apparmor
+  apt: name=apparmor update_cache=yes
+
+- name: docker
+  apt: name=docker-engine
+
+- name: restart
+  service: name=docker state=restarted
+
+- name: pull
+  shell: docker pull jupyterhub/singleuser
