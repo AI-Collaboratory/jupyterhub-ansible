@@ -26,13 +26,7 @@ signed certificate by:
 
 Obviously you'll need to [install Ansible](http://docs.ansible.com/ansible/intro_installation.html#installation) in order to run the playbook. But once you've got Ansible you can install and start up JupyterHub by:
 
-    ansible-playbook -v jupyterhub.yml
-
-## Data
-
-You don't need the `sync.yml` playbook or the exercises role to run a 
-jupyterhub server. These are for copying sample data and notebooks to 
-user directories.
+    ansible-playbook jupyterhub.yml
 
 ## Develop
 
