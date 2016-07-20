@@ -5,8 +5,8 @@ UMD's LDAP is used for authentication and every logged in user gets their own
 environment managed as a Docker container.
 
 By default we're using the stock SciPy Docker container. But if other languages
-environments are useful to you let us know and we can pick additional 
-containers from [docker-stacks] or build our own.
+environments are potentially useful to you please get in touch: we can pick 
+additional containers from [docker-stacks] or build our own.
 
 ## Setup
 
