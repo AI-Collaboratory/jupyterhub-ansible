@@ -1,14 +1,19 @@
 # jupyterhub-ansible
 
-These ansible plays are used to setup, configure and manage DCIC's JupyterHub.
-They are a work in progress.
+This ansible playbook ius used to setup, configure and manage DCIC's JupyterHub.
+UMD's LDAP is used for authentication and every logged in user gets their own
+environment managed as a Docker container.
+
+By default we're using the stock SciPy Docker container. But if other languages
+environments are useful to you let us know and we can pick additional 
+containers from [docker-stacks] or build our own.
 
 ## Setup
 
 First get this repository if you haven't already:
 
     git clone https://github.com/umd-dcic/jupyterhub-ansible.git
-    cd jupyterhub
+    cd jupyterhub-ansible
 
 Edit `hosts` to point at your server.  We run JupyterHub under SSL. If you 
 have a certificate (ssl.crt) and private key already (ssl.key) you can 
@@ -16,14 +21,6 @@ place them in this directory.  Otherwise you can generate a self
 signed certificate by:
 
     openssl req -x509 -newkey rsa:2048 -keyout ssl.key -out ssl.crt -days XXX
-
-Since this setup uses GitHub for authentication you will need to add those
-to `group_vars/all/secret.yml`. A template is included for you in 
-`group_vars/all/secret.template`.
-
-    cp group_vars/all/secret.template group_vars/all/secret.yml
-
-Fill in the missing variables in `group_vars/all/secret.yml`. See [Jupyterhub Getting Started](https://jupyterhub.readthedocs.org/en/latest/getting-started.html) and the [oauthenicator documentation](https://github.com/jupyter/oauthenticator) for more details.
 
 ## Run
 
@@ -43,3 +40,4 @@ If you want to workon this playbook you can use the supplied Vagrant setup.
 
     vagrant up
 
+[docker-stacks]: https://github.com/jupyter/docker-stacks
