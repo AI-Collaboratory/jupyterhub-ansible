@@ -2,4 +2,4 @@
   - debug: msg={{ github_oauth_callback_url }}
 
   - name: start jupyterhub
-    service: name=jupyterhub state=restarted
+    service: name=jupyterhub state=start

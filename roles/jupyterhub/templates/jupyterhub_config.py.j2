@@ -146,7 +146,7 @@ c.JupyterHub.extra_log_file = '/var/log/jupyterhub.log'
 # c.JupyterHub.generate_config = False
 
 # The ip for this process
-# c.JupyterHub.hub_ip = 'localhost'
+c.JupyterHub.hub_ip = '{{ hub_ip }}'
 
 # The port for this process
 c.JupyterHub.hub_port = {{ hub_port }}
@@ -196,6 +196,7 @@ c.JupyterHub.port = 443
 # 
 # Should be a subclass of Spawner.
 c.JupyterHub.spawner_class = 'dockerspawner.DockerSpawner'
+c.DockerSpawner.hub_ip_connect = '{{ hub_ip }}'
 
 # Path to SSL certificate file for the public facing interface of the proxy
 # 
@@ -326,7 +327,7 @@ c.JupyterHub.ssl_key = '{{ hub_ssl_key_path }}'
 # 
 # Use this to restrict which users can login. If empty, allow any user to
 # attempt login.
-c.Authenticator.whitelist = set(['edsu', 'gregjan', 'brierjon', 'karenleslie', 'JH27', 'richardjmarciano'])
+#c.Authenticator.whitelist = set(['edsu', 'gregjan', 'brierjon', 'karenleslie', 'JH27', 'richardjmarciano'])
 
 #------------------------------------------------------------------------------
 # LocalAuthenticator configuration
