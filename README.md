@@ -15,12 +15,23 @@ First get this repository if you haven't already:
     git clone https://github.com/umd-dcic/jupyterhub-ansible.git
     cd jupyterhub-ansible
 
-Edit `hosts` to point at your server.  We run JupyterHub under SSL. If you 
-have a certificate (ssl.crt) and private key already (ssl.key) you can 
-place them in this directory.  Otherwise you can generate a self 
-signed certificate by:
+Edit `hosts` to point at the IP address of your server you want to target with
+the playbook. Make sure the section name for your IP address matches the `hosts`
+property in your `jupyterhub.yml` file. Edit the `hub_ip` property in your
+`group_vars/all/config.yml` to point at the public IP address for your
+JupyterHub instance.
+
+We run JupyterHub under SSL. If you have a certificate (ssl.crt) and private key
+already (ssl.key) you can place them in this directory.  Otherwise you can
+generate a self signed certificate by:
 
     openssl req -x509 -newkey rsa:2048 -keyout ssl.key -out ssl.crt -days XXX
+
+If there is a passphrase associated with your certificate you will want to:
+
+    cp group_vars/secret.template group_vars/secret.yml
+
+and then add it the passphrase to group_vars/secret.yml.
 
 ## Run
 

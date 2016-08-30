@@ -26,20 +26,20 @@
 
   - name: make sure cookie_secret file is present
     file: dest={{ hub_runtime_dir }}/cookie_secret state=touch mode=0644
-    notify:
-      - start jupyterhub
 
   - name: make sure hub sqlite is present
     file: dest={{ hub_runtime_dir }}/jupyterhub.sqlite state=touch mode=0644
-    notify:
-      - start jupyterhub
 
   - name: create upstart config
     template: src=jupyterhub.conf.j2 dest=/etc/init/jupyterhub.conf
-    notify:
-      - start jupyterhub
 
   - name: create config file
     template: src=jupyterhub_config.py.j2 dest={{ hub_config_dir }}/jupyterhub_config.py
-    notify:
-      - start jupyterhub
+
+  - name: enable jupyterhub
+    service: name=jupyterhub enabled=yes
+
+  - name: start jupyterhub
+    service: name=jupyterhub state=restarted
+
+

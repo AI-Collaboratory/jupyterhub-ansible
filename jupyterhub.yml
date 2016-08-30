@@ -1,6 +1,6 @@
 ---
   - name: set up a jupyterhub
-    hosts: stage
+    hosts: develop
     become: true
     become_user: root
     become_method: sudo
