@@ -29,7 +29,7 @@ generate a self signed certificate by:
 
 If there is a passphrase associated with your certificate you will want to:
 
-    cp group_vars/secret.template group_vars/secret.yml
+    cp group_vars/all/secret.template group_vars/all/secret.yml
 
 and then add it the passphrase to group_vars/secret.yml.
 
