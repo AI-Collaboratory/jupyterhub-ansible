@@ -9,6 +9,20 @@
       - npm
       - nodejs-legacy
       - git
+      - python3
+      - python3-pip
+
+  - name: install python dependencies
+    command: pip3 install {{ item }}
+    with_items:
+      - sqlalchemy  # for oauthenticator
+      - simplepam   # for oauthenticator
+      - jupyterhub-ldapauthenticator
+      - dockerspawner
+      - docker-py
+      - docker-compose
+      - git+https://github.com/jupyter/oauthenticator.git@0.2.0
+      - jupyterhub
 
   - name: install npm packages
     npm: name=configurable-http-proxy global=yes
@@ -17,7 +31,6 @@
     get_url: >
       url=http://stedolan.github.io/jq/download/linux64/jq
       dest=/usr/local/bin/jq
-      sha256sum="{{ jq_sha256sum }}"
 
   - name: make jq executable
     file: dest=/usr/local/bin/jq state=touch mode=755

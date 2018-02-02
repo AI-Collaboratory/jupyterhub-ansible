@@ -6,6 +6,5 @@
     become_method: sudo
     roles:
       - system
-      - python
       - docker
       - jupyterhub

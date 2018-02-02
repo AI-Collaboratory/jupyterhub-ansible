@@ -15,4 +15,4 @@
   service: name=docker state=restarted
 
 - name: pull
-  shell: docker pull jupyterhub/singleuser
+  shell: docker pull jupyter/datascience-notebook

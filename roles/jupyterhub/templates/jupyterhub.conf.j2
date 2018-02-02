@@ -10,6 +10,4 @@ stop on runlevel [!2345]
 
 respawn
 
-env PATH=/opt/anaconda/envs/{{ conda_env_name }}/bin:{{ ansible_env.PATH }}
-
 exec jupyterhub --debug --config {{ hub_config_dir }}/jupyterhub_config.py

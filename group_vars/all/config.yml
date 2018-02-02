@@ -1,7 +1,4 @@
 ---
-  miniconda_sha256sum: a7bcd0425d8b6688753946b59681572f63c2241aed77bf0ec6de4c5edc5ceeac 
-  jq_sha256sum: b9b63aa4b3cc85df8bdca884effb69d66e9ebd717454a9e212d9423ffe3e955f
-  conda_env_name: hub
   hub_ssl_cert_path: /srv/jupyterhub/ca-bundle.cert
   hub_ssl_protected_key_path: /srv/jupyterhub/ssl.protected.key
   hub_ssl_key_path: /srv/jupyterhub/ssl.key

@@ -196,7 +196,8 @@ c.JupyterHub.port = 443
 # 
 # Should be a subclass of Spawner.
 c.JupyterHub.spawner_class = 'dockerspawner.DockerSpawner'
-c.DockerSpawner.hub_ip_connect = '{{ hub_ip }}'
+c.DockerSpawner.hub_connect_ip = '{{ hub_ip }}'
+c.DockerSpawner.container_image = 'jupyter/datascience-notebook'
 
 # Path to SSL certificate file for the public facing interface of the proxy
 # 
