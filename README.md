@@ -1,12 +1,13 @@
 # jupyterhub-ansible
 
-This ansible playbook ius used to setup, configure and manage DCIC's JupyterHub.
+This ansible playbook is used to setup, configure and manage DCIC's JupyterHub.
 UMD's LDAP is used for authentication and every logged in user gets their own
 environment managed as a Docker container.
 
-By default we're using the stock SciPy Docker container. But if other languages
-environments are potentially useful to you please get in touch: we can pick 
-additional containers from [docker-stacks] or build our own.
+Jupyter's [datascience-notebook] is used which includes Python, R and Julia
+notebook environments with tons of useful third party libraries. But if other
+languages we can pick additional containers from [docker-stacks] or build our
+own. Leave an issue ticket if you'd like more things to be included.
 
 ## Setup
 
@@ -41,8 +42,11 @@ Obviously you'll need to [install Ansible](http://docs.ansible.com/ansible/intro
 
 ## Develop
 
-If you want to workon this playbook you can use the supplied Vagrant setup.
+If you want to work on this playbook you can use the supplied [Vagrant] setup
+which will bring up a virtual Ubuntu instance and configure that:
 
     vagrant up
 
 [docker-stacks]: https://github.com/jupyter/docker-stacks
+[datascience-notebook]: https://github.com/jupyter/docker-stacks/tree/master/datascience-notebook
+[Vagrant]: https://www.vagrantup.com/
